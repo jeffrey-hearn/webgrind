@@ -151,8 +151,8 @@ try {
             if (!file_exists($filename)) {
                 shell_exec(Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction.' -f callgrind '.Webgrind_Config::xdebugOutputDir().''.$dataFile.' | '.Webgrind_Config::$dotExecutable.' -Tsvg -o ' . $filename);
             }
-			readfile($filename);
-		break;
+            readfile($filename);
+        break;
     	case 'version_info':
     		$response = @file_get_contents('http://jokke.dk/webgrindupdate.json?version='.Webgrind_Config::$webgrindVersion);
     		echo $response;
