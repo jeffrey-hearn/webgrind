@@ -147,7 +147,7 @@ try {
             }
             header("Content-Type: image/svg+xml");
             $filename = Webgrind_Config::storageDir().$dataFile.'-'.$showFraction.Webgrind_Config::$preprocessedSuffix.'.svg';
-			header("Content-Disposition: inline; filename=" . $filename);
+            header("Content-Disposition: inline; filename=" . $filename);
 		    if (!file_exists($filename)) {
 				shell_exec(Webgrind_Config::$pythonExecutable.' library/gprof2dot.py -n '.$showFraction.' -f callgrind '.Webgrind_Config::xdebugOutputDir().''.$dataFile.' | '.Webgrind_Config::$dotExecutable.' -Tsvg -o ' . $filename);
 			}
